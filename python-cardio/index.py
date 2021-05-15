@@ -8,6 +8,10 @@ def main():
         print('*** Bienvenido a los reto de la primera semana! ***\n')
         print('Reto 1: Área del triangulo')
         print('Reto 2: Piedra, papel o tijeras')
+        print('Reto 3: Conversor de millas a kilómetros')
+        print('Reto 4: Calcular volúmen de figuras')
+        print('Reto 5: Rangos cambiantes')
+        print('Ingresa cualquier otro número para salir')
         op = int(input('\nIngresa la opción que deseas realizar: '))
         clear()
 
@@ -15,6 +19,12 @@ def main():
             challenge_01()
         elif op == 2:
             challenge_02()
+        elif op == 3:
+            challenge_03()
+        elif op == 4:
+            challenge_04()
+        elif op == 5:
+            challenge_05()
         
         clear()
 
@@ -107,6 +117,89 @@ def challenge_02():
             input('Presiona Enter para continuar...')
             clear()
             break
+
+
+def challenge_03():
+    while True:
+        print('Reto 3: Conversor de millas a kilómetros\n')
+        print('1. De millas a kilómetros')
+        print('2. De kilómetros a millas')
+        print('3. Salir')
+        op = int(input('\nIngresa la opción que deseas realizar: '))
+        clear()
+        if op == 1:
+            mi = float(input('Ingresa las millas que quieres convertir: '))
+            km = mi * 1.609344
+            print('\n')
+            print(mi, 'millas equivalen a', km, 'kilómetros.')
+        elif op == 2:
+            km = float(input('Ingresa los kilómetros que quieres convertir: '))
+            mi = km /1.609344
+            print('\n')
+            print(km, 'kilómetros equivalen a', mi, 'millas.')
+        elif op == 3:
+            break
+        input('\n\nPresiona Enter para continuar...')
+        clear()
+
+
+def challenge_04():
+    while True:
+        print('Reto 4: Calculadora de volúmenes')
+        print('1. Cilindro')
+        print('2. Cubo')
+        print('3. Esfera')
+        print('4. Salir')
+        op = int(input('Ingresa la figura que deseas calcuar: '))
+
+        clear()
+
+        if op == 1:
+            r = float(input('Ingresa el radio en cm de la base: '))
+            h = float(input('Ingresa la altura en cm del cilindro: '))
+            A = 3.1416 * (r**2)
+            v = A * h
+            print('\nEl volúmen del cilindro es de', v, 'cm^3')
+        elif op == 2:
+            l = float(input('Ingresa el tamaño en cm de un lado del cubo: '))
+            v = l**3
+            print('\nEl volúmen del cubo es de', v, 'cm^3')
+        elif op == 3:
+            r = float(input('Ingresa el radio de la esfera: '))
+            v = (4/3) * 3.1416 * (r**3)
+            print('\nEl volúmen de la esfera es de', v, 'cm^3')
+        elif op == 4:
+            break
+
+        input('\n\nPresiona Enter para continuar')
+        clear()
+
+
+def challenge_05():
+    while True:
+        print('Reto 5: Rangos cambiantes\n')
+        li = int(input('Ingresa el límite inferior: '))
+        ls = int(input('Ingresa el límite superior: '))
+        
+        while True:
+            clear()
+            co = int(input('Ingresa el número de comparación: '))
+
+            if co < ls and co > li:
+                print(co, 'está dentro de los límites')
+                break
+            else:
+                print(co, 'está fuera de los límites')
+                input('Presiona Enter para continuar...')
+            clear()
+        
+        op = int(input('\nIngrese el número 1 para salir o 0 para continuar: '))
+        if op == 0:
+            clear()
+        else:
+            break
+
+
 
 def clear():
     os.system('clear')
